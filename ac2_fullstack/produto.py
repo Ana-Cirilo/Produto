@@ -33,7 +33,7 @@ def gravar():
 def listar():
   conn = mysql.connect()
   cursor = conn.cursor()
-  cursor.execute('select user_name, user_cpf, user_endereco from tbl_cadastro')
+  cursor.execute('user_name, user_preco, user_categoria')
   data = cursor.fetchall()
   conn.commit()
   return render_template('lista.html', datas=data)
