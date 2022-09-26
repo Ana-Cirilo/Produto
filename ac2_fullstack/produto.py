@@ -21,10 +21,10 @@ def gravar():
   nome = request.form['nome_prod']
   preco = request.form['preco_prod']
   categoria = request.form['cat_prod']
-  if nome and cpf and endereco:
+  if nome and preco and categoria:
     conn = mysql.connect()
     cursor = conn.cursor()
-    cursor.execute('insert into tbl_cadastro (user_name, user_preco, user_categoria) VALUES (%s, %s, %s)', (nome, preco, categoria))
+    cursor.execute('insert into tbl_produto (user_name, user_preco, user_categoria) VALUES (%s, %s, %s)', (nome, preco, categoria))
     conn.commit()
   return render_template('index.html')
 
